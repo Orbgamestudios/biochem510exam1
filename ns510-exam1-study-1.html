@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>NS 510 Exam 1 Study Kit</title>
+<style>
+:root{--bg:#16181b;--card:#202327;--ink:#e9e8e4;--mut:#8f918c;--ac:#7d93a3;--acs:#212e33;--bad:#c97b6a;--ok:#7fae7f;--ln:#33363a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:640px;margin:0 auto;padding:16px}
+.cd{font:700 clamp(46px,15vw,76px)/1 Georgia,'Times New Roman',serif;letter-spacing:-1px}
+.sub{color:var(--mut);margin:4px 0 12px}
+.bar{height:8px;background:var(--ln);border-radius:4px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ac);transition:width .3s}
+.pl{font-size:14px;color:var(--mut);margin:4px 0 14px}
+#tabs{display:flex;gap:6px;margin-bottom:10px}
+#tabs button{flex:1;min-height:44px;border:1px solid var(--ln);background:var(--card);color:var(--ink);border-radius:8px;font:600 15px system-ui}
+#tabs button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+select{width:100%;min-height:44px;margin-bottom:10px;border-radius:8px;border:1px solid var(--ln);background:var(--card);color:var(--ink);padding:0 10px;font:15px system-ui}
+.row{display:flex;gap:8px;align-items:center;justify-content:space-between;margin:10px 0;font-size:14px;color:var(--mut)}
+.fc{background:var(--card);border:1px solid var(--ln);border-left:6px solid var(--ac);border-radius:10px;min-height:190px;padding:20px;display:flex;flex-direction:column;justify-content:center;cursor:pointer;font:20px/1.4 Georgia,serif}
+.fc.a{border-left-color:var(--ok);background:var(--acs)}
+.fc small{font:13px system-ui;color:var(--mut);margin-bottom:8px}
+.btns{display:flex;gap:8px;margin-top:10px}
+.btns button,.go{flex:1;min-height:48px;border-radius:8px;border:1px solid var(--ln);background:var(--card);color:var(--ink);font:600 16px system-ui}
+.btns .m{border-color:var(--bad);color:var(--bad)}.btns .k,.go{background:var(--ac);border-color:var(--ac);color:#fff}
+.btns .m:hover{background:var(--bad);color:#fff}
+.q{font:20px/1.4 Georgia,serif;margin:6px 0 12px}
+.o{display:block;width:100%;text-align:left;min-height:48px;margin-bottom:8px;padding:10px 12px;border-radius:8px;border:1px solid var(--ln);background:var(--card);color:var(--ink);font:15px/1.4 system-ui}
+.o.c{border-color:var(--ok);background:var(--acs);font-weight:600}.o.w{border-color:var(--bad);color:var(--bad)}
+.gd h3{margin:18px 0 6px;font:700 18px Georgia,serif}
+.gd label{display:flex;gap:10px;align-items:flex-start;padding:9px 4px;border-bottom:1px solid var(--ln);cursor:pointer}
+.gd input{width:22px;height:22px;flex:none;accent-color:var(--ac)}
+.gd .d{color:var(--mut);text-decoration:line-through}
+.miss{background:var(--card);border-left:4px solid var(--bad);padding:8px 12px;margin:8px 0;border-radius:6px;font-size:14px}
+button:focus-visible,select:focus-visible,.fc:focus-visible,input:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+</style></head><body><main>
+<div class="cd" id="cd"></div><p class="sub" id="cds">until Exam 1, Friday Oct 2 at 8:50 am</p>
+<div class="bar"><i id="bar"></i></div><p class="pl" id="pl"></p>
+<div id="tabs"></div><select id="sel" aria-label="Topic"></select><div id="v"></div>
+</main><script>
+const GN={g1:"GI & digestion",g2:"Carb digestion & transport",g3:"Glycolysis, PDH, TCA",g4:"Gluconeogenesis & hormones",g5:"Glycogen & fructose",g6:"Fatty acids & EFAs",g7:"FA synthesis & oxidation",g8:"Lipid digestion & lipoproteins",g9:"Cholesterol & heart disease"};
+const R={
+g1:`Why don't pancreatic enzymes digest the pancreas?|They're made as inactive zymogens, activated by proteolysis in the duodenum
+Zymogen forms of pepsin, trypsin, chymotrypsin?|Pepsinogen, trypsinogen, chymotrypsinogen
+Main site of digestion and absorption?|Small intestine (duodenum, jejunum, ileum)
+Pancreas: exocrine role (99%)?|Digestive enzymes plus HCO3- to buffer stomach acid
+Pancreas: endocrine role (1%)?|Makes insulin and glucagon, released into blood
+What does stomach HCl (pH 2) do?|Denatures protein, releases minerals, kills most bacteria
+What does bile do, and where is it made?|Made from cholesterol in liver, stored in gallbladder; emulsifies fat and forms micelles
+Path of water-soluble nutrients after absorption?|Blood capillaries, portal vein, liver
+Path of fat-soluble nutrients after absorption?|Lacteals, lymph, left subclavian vein
+What do gut microbiota do for us?|Train immunity, make vitamin K and biotin, ferment fiber to SCFAs (~10% of calories)
+What increases small intestine surface area?|Folds, villi, and microvilli (brush border)
+What does the colon absorb?|Water, electrolytes (Na, K, Cl), microbial SCFAs`,
+g2:`Enzyme that starts starch digestion (saliva, pancreas)?|Amylase
+Brush border disaccharidases?|Sucrase, maltase, lactase
+Lactose is split into?|Glucose + galactose (lactase)
+Sucrose is split into?|Glucose + fructose (sucrase)
+Cause of lactose intolerance?|Low lactase; colon bacteria ferment leftover lactose (gas, diarrhea)
+Fate of undigested carbohydrate (fiber)?|Fermented by colon bacteria to SCFAs and gas
+Apical uptake of glucose and galactose?|SGLT1, secondary active transport driven by the Na+ gradient
+Basolateral exit of glucose from enterocyte?|GLUT2 (facilitated); Na+/K+ ATPase maintains the gradient
+Which glucose transporter is insulin-responsive?|GLUT4 (muscle, heart, adipose)
+Glucose transporter in liver and pancreatic beta cells?|GLUT2`,
+g3:`Glycolysis: location and net yield?|Cytosol; glucose to 2 pyruvate; net 2 ATP + 2 NADH
+Main regulatory step of glycolysis?|PFK-1 (fructose-6-P to fructose-1,6-bisP)
+Hexokinase vs glucokinase?|HK: low Km, most tissues, inhibited by G6P. GK: high Km, liver/beta cell, not inhibited by G6P
+Where is glucokinase fed vs fasted?|Cytoplasm after a meal (high glucose); nucleus between meals
+Pyruvate dehydrogenase reaction?|Pyruvate + CoA + NAD+ to acetyl-CoA + CO2 + NADH; irreversible, in mitochondria
+PDH cofactors and their vitamins?|TPP (B1), FAD (B2), NAD+ (niacin), CoA (pantothenate), lipoic acid
+TCA yield per acetyl-CoA?|3 NADH, 1 FADH2, 1 GTP, 2 CO2
+Citrate synthase reaction?|Acetyl-CoA (2C) + oxaloacetate (4C) to citrate (6C)
+Which TCA enzyme makes FADH2?|Succinate dehydrogenase
+Where does the TCA cycle make GTP?|Succinyl-CoA to succinate (succinate thiokinase)
+Overall ATP from one glucose (course numbers)?|38 ATP (8 glycolysis + 6 PDH + 24 TCA)
+TCA order after citrate?|Isocitrate, alpha-KG, succinyl-CoA, succinate, fumarate, malate, oxaloacetate`,
+g4:`Where does gluconeogenesis occur?|Liver (90%) and kidney (10%); cytosol and mitochondria
+Main gluconeogenic substrates?|Lactate, glycerol, amino acids (alanine)
+Three bypass steps of gluconeogenesis?|Pyruvate carboxylase/PEPCK, fructose-1,6-bisphosphatase, glucose-6-phosphatase
+Pyruvate carboxylase?|Pyruvate to oxaloacetate in mitochondria; needs biotin, ATP, CO2
+PEP carboxykinase (PEPCK)?|Oxaloacetate to PEP in cytosol using GTP; releases CO2
+What powers gluconeogenesis?|Beta-oxidation of fatty acids; amino acids supply the carbon
+Fructose-2,6-bisphosphate effect?|Activates PFK-1, inhibits FBPase-1 (favors glycolysis)
+Glucagon effect on PFK-2/FBPase-2?|PKA phosphorylates it, F2,6BP falls, gluconeogenesis wins
+Cori cycle?|Muscle lactate goes to liver, becomes glucose, returns to muscle
+Glucagon/epinephrine signaling chain?|GPCR (Gs), adenylyl cyclase, cAMP, protein kinase A
+Glucagon vs epinephrine targets?|Glucagon: liver only. Epinephrine: liver and muscle
+Insulin receptor signaling?|Tyrosine kinase autophosphorylation, IRS1, PI3K, Akt
+How does insulin raise glucose uptake?|Triggers GLUT4 vesicle exocytosis to the surface (exercise does too)
+Kidney threshold and fasting glucose?|Fasting ~90 mg/dL (5 mM); kidney threshold ~170 mg/dL
+What does the pyruvate tolerance test measure?|Gluconeogenesis (glucose rise after pyruvate)`,
+g5:`Glycogen bond types?|Alpha-1,4 linear chains with alpha-1,6 branches
+Activated donor for glycogen synthesis?|UDP-glucose (glycogen synthase adds it)
+Enzyme that breaks down glycogen?|Glycogen phosphorylase (makes glucose-1-P)
+Liver vs muscle glycogen?|Liver releases glucose to blood; muscle keeps it for its own glycolysis
+Why is fructose lipogenic?|Skips PFK-1 control, floods glycolysis, so more acetyl-CoA goes to fatty acids
+Galactose fate?|Liver converts it to glucose (glycolysis or glycogen)`,
+g6:`Stearic acid?|C18:0, saturated
+Oleic acid?|C18:1 omega-9, monounsaturated
+Palmitic acid?|C16:0, saturated
+Linoleic acid?|C18:2 omega-6, essential
+Alpha-linolenic acid?|C18:3 omega-3, essential
+Delta vs omega numbering?|Delta counts from the carboxyl end; omega (n) counts from the methyl end
+Cis vs trans double bonds?|Cis bends the chain (oil); trans stays straight and behaves like saturated fat
+Iso vs anteiso branched-chain FAs?|Iso: methyl at omega-2. Anteiso: methyl at omega-3. Found in dairy, not plants
+Why are linoleate and linolenate essential?|Humans can't add double bonds before omega-9; needed for eicosanoids
+EPA vs DHA?|EPA C20:5 omega-3; DHA C22:6 omega-3 (from alpha-linolenate)
+Arachidonic acid?|C20:4 omega-6 (from linoleate); eicosanoid precursor
+Omega-6 vs omega-3 eicosanoids?|Omega-6: more clotting and inflammation. Omega-3: less clotting (excess risks hemorrhagic stroke)
+EFA deficiency signs?|Flaky itchy skin, diarrhea, infections, poor growth and wound healing, anemia
+Phosphatidylinositol gives which second messengers?|IP3 and DAG (via phospholipase C)`,
+g7:`Fatty acid synthesis: where and what carrier?|Cytosol; fatty acid synthase with 4-phosphopantetheine
+Building block for fatty acid synthesis?|Malonyl-CoA (from acetyl-CoA via ACC), added 2 carbons at a time
+Reducing power for fatty acid synthesis?|2 NADPH per cycle
+Palmitate stoichiometry?|8 acetyl-CoA + 14 NADPH + 7 ATP (about 49 ATP equivalents)
+How does acetyl-CoA reach the cytosol?|Citrate shuttle; ATP-citrate lyase remakes acetyl-CoA (costs 1 ATP)
+Beta-oxidation: where and per-cycle yield?|Mitochondrial matrix; 1 NADH + 1 FADH2 per 2-carbon cycle
+Fatty acid activation cost?|Acyl-CoA synthetase in cytosol; 2 ATP equivalents (AMP + PPi)
+Role of carnitine?|CPT1/CPT2 carry long-chain acyl groups across the inner mitochondrial membrane
+MCAD deficiency?|Can't oxidize medium-chain FAs; fasting hypoglycemia, acylcarnitines in blood; avoid long fasts
+Odd-chain FA oxidation ends with?|Propionyl-CoA (3C), converted to succinyl-CoA`,
+g8:`Pancreatic lipase action?|Cuts sn1 and sn3 of TAG, leaving 2-monoacylglycerol + 2 FFA
+What does CCK do?|Made in duodenum by fat/protein; contracts gallbladder and drives pancreatic secretion
+What are micelles?|Bile acids + FFA, 2-MAG, cholesterol; carry lipids to the enterocyte
+How are short-chain FAs absorbed?|Diffuse straight into blood, no chylomicron
+Enterocyte re-esterification?|MGAT and DGAT rebuild TAG in ER, packaged into chylomicrons
+Chylomicron route to blood?|Golgi, exocytosis, lymph, thoracic duct, bloodstream
+Fat tolerance test shape?|TG rises after a fat meal (chylomicrons) then falls as LPL clears them
+Lipoprotein lipase (LPL)?|On capillary endothelium; activated by apoC-II; leaves a chylomicron remnant
+Which particles carry triglyceride?|Only chylomicrons and VLDL
+Chylomicron remnant fate?|Taken up by liver via apoE receptors
+VLDL metabolism?|LPL strips TG to make IDL, then LDL
+LDL role and receptor ligands?|Main cholesterol carrier; LDLR binds apoB-100 and apoE
+HDL and reverse cholesterol transport?|ABCA1 effluxes cholesterol, apoA1 activates LCAT, esters go back to liver`,
+g9:`Rate-limiting enzyme of cholesterol synthesis?|HMG-CoA reductase (HMGCR)
+How does SREBP2 work?|Low sterol: SREBP2 moves to Golgi, is cleaved, enters nucleus, turns on HMGCR and LDLR genes
+How do statins work?|Inhibit HMGCR; liver upregulates LDL receptors and clears LDL; muscle pain is top side effect
+Ezetimibe?|Blocks intestinal cholesterol absorption
+PCSK9?|Promotes LDL receptor degradation; inhibitors (injected) raise LDLR and lower LDL
+PCSK9 inhibitor vs statin?|Statin cuts synthesis; PCSK9 inhibitor stops LDLR degradation
+CETP inhibitors?|Block CE transfer from HDL to VLDL/LDL; raised HDL but no CAD protection
+Familial hypercholesterolemia?|LDLR mutations; het 250-350, homo >600 mg/dL; xanthomas
+Tangier disease?|ABCA1 loss; very low HDL, orange tonsils, big liver/spleen; autosomal recessive
+Key event in atherogenesis?|LDL oxidation, then monocyte recruitment (MCP-1) and macrophage foam cells
+Drugs and supplements for high TG?|Fibrates, high-dose statins, fish oil (high-dose EPA cut events)
+What does ACAT do?|Esterifies cholesterol inside cells when intracellular cholesterol is high
+Treating established coronary disease?|CABG bypass surgery or angioplasty with stents`};
+const GD={"Digestion":"Primary and accessory organs (microbiome);Zymogens and activation;Small intestine anatomy (villi, enterocytes);GERD, pancreatitis, IBD",
+"Carbohydrates":"Types of carbohydrates;Digestive enzymes and what they digest;Fate of undigested carbs;Lactose intolerance;Absorption (active transport);Glucose transport (GLUTs);Fates of glucose in the cell;Hexokinase vs glucokinase;Glycolysis inputs, outputs, regulation;Pyruvate dehydrogenase;TCA cycle inputs, outputs, regulation;Overall glucose catabolism;Fructose metabolism (why lipogenic);Gluconeogenesis;Fructose-2,6-bisphosphate;Glycogen structure and metabolism;Glycogen synthesis;Glucose and pyruvate tolerance tests;Insulin signaling and GLUT4;G-protein signaling and kinases;Glucagon and glycogen metabolism;Glucose regulation summary",
+"Lipids":"Types of lipids;Nomenclature (fatty acids, TAG);Key dietary fatty acids;Saturated vs unsaturated;Branched-chain FAs;Essential fatty acids;Fatty acid synthesis;Carnitine transport;Fatty acid oxidation (yield, odd vs even);Cholesterol biosynthesis;Lipid digestion, absorption, bile acids;Fat tolerance test;Lipoprotein classes and apoproteins;Lipoprotein trafficking;Reverse cholesterol transport;LDL receptor and its disease;Familial hypercholesterolemia and Tangier;Atherosclerosis basics;Treating atherosclerosis;How statins work;PCSK9 therapy vs statins;Targeting HDL (did it work?);SREBP2 mechanism"};
+const cards=[];for(const g in R)R[g].trim().split("\n").forEach(l=>{const[q,a]=l.split("|");cards.push({id:cards.length,g,q,a})});
+const QZ={
+g1:`What is a zymogen?|An inactive enzyme precursor activated by proteolysis|A vitamin cofactor enzymes need|A hormone that triggers digestion|A bacterial enzyme made in the colon
+Which best describes the pancreas?|Mostly exocrine (digestive enzymes), a small endocrine role|Mostly endocrine, a small exocrine role|Purely mechanical digestion, no enzymes|Purely absorptive, no secretion
+Bile is synthesized from?|Cholesterol|Triglycerides|Amino acids|Glycogen
+Which organ absorbs the most water and electrolytes?|Large intestine (colon)|Esophagus|Stomach|Duodenum
+Fat-soluble nutrients are absorbed into the?|Lymphatic system, via lacteals|Portal vein, directly|Renal circulation|Hepatic artery
+The modern theory of appendix function is that it?|Stores beneficial bacteria to repopulate the gut|Has no function at all|Digests most dietary fiber|Produces bile acids`,
+g2:`SGLT1 moves glucose into enterocytes by?|Secondary active transport driven by the sodium gradient|Simple diffusion|Facilitated diffusion, same as GLUT2|Endocytosis
+Glucose exits the enterocyte into blood mainly via?|GLUT2|SGLT1|GLUT4|GLUT5
+Which glucose transporter is insulin-responsive?|GLUT4, in muscle and fat|GLUT2, in liver|GLUT1, found almost everywhere|GLUT5, for fructose
+Lactose intolerance is caused by a deficiency of?|Lactase|Sucrase|Amylase|Maltase
+Fructose is absorbed at the apical membrane by?|GLUT5|SGLT1|GLUT4|GLUT2
+Undigested dietary fiber is processed mainly by?|Fermentation by colonic bacteria|Pancreatic amylase|Gastric acid|Bile acids`,
+g3:`The main regulatory enzyme of glycolysis is?|PFK-1|Hexokinase|Pyruvate kinase|Aldolase
+Net ATP yield from glycolysis alone is?|2 ATP|4 ATP|0 ATP|8 ATP
+Pyruvate dehydrogenase converts pyruvate into?|Acetyl-CoA, CO2, and NADH|Oxaloacetate|Lactate|PEP
+Which cofactor is NOT used by pyruvate dehydrogenase?|Folate|Thiamine (as TPP)|Riboflavin (as FAD)|Niacin (as NAD+)
+The TCA cycle takes place in the?|Mitochondrial matrix|Cytosol|Nucleus|Golgi apparatus
+Citrate synthase combines acetyl-CoA with?|Oxaloacetate|Malate|Succinate|Alpha-ketoglutarate
+Which TCA step directly generates GTP?|Succinyl-CoA to succinate|Citrate to isocitrate|Malate to oxaloacetate|Fumarate to malate
+Hexokinase differs from glucokinase because it?|Has a low Km and is inhibited by glucose-6-P|Is found only in the liver|Requires insulin to be active|Has a very high Km`,
+g4:`Gluconeogenesis occurs mainly in the?|Liver and kidney|Muscle and brain|Adipose tissue|Pancreas
+Pyruvate carboxylase requires which cofactor?|Biotin|Thiamine|Riboflavin|Folate
+High fructose-2,6-bisphosphate favors?|Glycolysis over gluconeogenesis|Gluconeogenesis over glycolysis|Neither pathway|Glycogen breakdown specifically
+Glucagon's primary target organ is the?|Liver|Muscle|Adipose tissue|Kidney
+Unlike glucagon, epinephrine also strongly acts on the?|Muscle|Pancreas|Brain, exclusively|Red blood cells
+Glucagon and epinephrine both signal through?|G-protein coupled receptors and cAMP|Tyrosine kinase receptors|Nuclear hormone receptors|Ligand-gated ion channels
+Insulin raises glucose uptake mainly by?|Moving GLUT4 to the cell surface|Increasing GLUT2 synthesis|Activating SGLT1|Inhibiting glycogen synthase
+The Cori cycle describes?|Muscle lactate converted to glucose by the liver|Glucose stored as muscle glycogen|Fatty acids shuttled by carnitine|Cholesterol recycled to bile acids`,
+g5:`Glycogen branch points are linked by?|Alpha-1,6 bonds|Alpha-1,4 bonds|Beta-1,4 bonds|Peptide bonds
+The activated glucose donor for glycogen synthesis is?|UDP-glucose|ATP-glucose|Glucose-6-phosphate|Acetyl-CoA
+Fructose is more lipogenic than glucose because it?|Bypasses PFK-1, driving more carbon to fat synthesis|Cannot enter glycolysis at all|Converts directly into glycogen|Inhibits fatty acid synthesis
+Muscle can't release free glucose to the blood because it lacks?|Glucose-6-phosphatase|Glycogen phosphorylase|Hexokinase|Glycogen synthase
+Galactose is converted to glucose mainly by the?|Liver|Kidney|Muscle|Adipose tissue`,
+g6:`Oleic acid is classified as?|Monounsaturated, omega-9|Saturated|Polyunsaturated, omega-3|An essential fatty acid
+The delta system numbers double bonds counting from the?|Carboxyl (alpha) end|Methyl (omega) end|Middle carbon|Second carbon only
+A cis double bond causes a fatty acid chain to?|Bend|Stay straight, like a saturated fat|Shorten by a carbon|Lose a hydrogen atom
+Linoleic and alpha-linolenic acid are essential because humans can't?|Add double bonds before the omega-9 position|Make any double bonds at all|Absorb them from food|Store them in fat tissue
+Arachidonic acid is derived from?|Linoleic acid (omega-6)|Alpha-linolenic acid (omega-3)|Oleic acid|Stearic acid
+Omega-6 eicosanoids tend to?|Increase clotting and inflammation|Decrease clotting|Have no vascular effect|Only affect vision
+Branched iso-series fatty acids have their methyl group at?|Omega-2|Omega-3|Omega-6|Omega-9
+A classic sign of essential fatty acid deficiency is?|Flaky, itchy skin|Excess clotting, but nothing else|High blood cholesterol|Rapid weight gain`,
+g7:`Fatty acid synthesis takes place in the?|Cytosol|Mitochondrial matrix|Nucleus|Peroxisome
+The activated building block for fatty acid synthesis is?|Malonyl-CoA|Acetyl-CoA alone|Citrate|Pyruvate
+Fatty acid synthesis draws its reducing power from?|NADPH|NADH|FADH2|ATP alone
+Beta-oxidation of fatty acids occurs in the?|Mitochondrial matrix|Cytosol|Nucleus|Golgi apparatus
+Each cycle of beta-oxidation yields?|1 NADH and 1 FADH2|2 NADH only|1 ATP directly|3 NADH
+Carnitine's role in fatty acid oxidation is to?|Shuttle long-chain acyl groups into mitochondria|Supply 2-carbon units for synthesis|Activate fatty acids in the cytosol|Accept electrons during oxidation
+MCAD deficiency impairs oxidation of fatty acids that are?|Medium chain (6-12 carbons)|Very short chain|Very long chain, only|Odd chain, only`,
+g8:`Pancreatic lipase primarily cleaves which positions of a triglyceride?|sn-1 and sn-3|sn-2 only|All three, equally|None; it targets phospholipids
+Micelles are mainly composed of?|Bile acids, free fatty acids, monoacylglycerol, cholesterol|Only triglycerides|Only protein|Glycogen and glucose
+The main carrier of dietary triglyceride in the blood is the?|Chylomicron|LDL particle|HDL particle|Albumin, alone
+Lipoprotein lipase is activated by?|ApoC-II|ApoB-100|ApoE, alone|ApoA1
+LDL receptors recognize which apolipoproteins?|ApoB-100 and ApoE|ApoC-II, only|ApoA1, only|ApoA4
+HDL's main role is?|Reverse cholesterol transport, from tissues to liver|Delivering triglyceride to muscle|Carrying dietary cholesterol from the gut|Storing cholesterol in fat cells
+VLDL is converted toward LDL through the action of?|Lipoprotein lipase, forming IDL first|Pancreatic lipase|Bile acids|Hepatic amylase
+Short-chain fatty acids are absorbed by?|Diffusing directly into the bloodstream|Packaging into chylomicrons|Requiring bile acid micelles|Requiring pancreatic lipase first`,
+g9:`The rate-limiting enzyme of cholesterol synthesis is?|HMG-CoA reductase|Citrate synthase|PFK-1|LCAT
+Statins lower cholesterol by?|Inhibiting HMG-CoA reductase|Blocking intestinal absorption|Degrading LDL receptors|Inhibiting PCSK9
+Ezetimibe works by?|Blocking intestinal cholesterol absorption|Inhibiting HMG-CoA reductase|Degrading LDL receptors|Raising HDL directly
+PCSK9 normally?|Promotes LDL receptor degradation|Increases LDL receptor synthesis|Has no effect on receptors|Lowers LDL directly
+Familial hypercholesterolemia is caused by defects in the?|LDL receptor|ABCA1 transporter|HMG-CoA reductase|ApoA1
+Tangier disease results from a defect in?|ABCA1|The LDL receptor|HMG-CoA reductase|ApoB-100
+A key initiating event in atherosclerosis is?|Oxidation of LDL|Oxidation of HDL|Loss of bile acids|Excess ABCA1 activity
+CETP inhibitors raise HDL, but clinical trials showed?|No reduction in coronary events|A dramatic drop in heart attacks|Full reversal of atherosclerosis|Increased LDL clearance`};
+const qarr=[];for(const g in QZ)QZ[g].trim().split("\n").forEach(l=>{const p=l.split("|");qarr.push({g,q:p[0],a:p[1],w:[p[2],p[3],p[4]]})});
+let S={k:{},c:{}};try{S=JSON.parse(localStorage.getItem("ns510"))||S}catch(e){}
+const save=()=>{try{localStorage.setItem("ns510",JSON.stringify(S))}catch(e){}};
+const $=s=>document.querySelector(s),esc=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const sh=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+let grp="all",tab="cards",deck=[],di=0,fl=false,hk=false,qz=null;
+const pool=()=>cards.filter(c=>grp=="all"||c.g==grp);
+function build(){let p=pool();if(hk)p=p.filter(c=>S.k[c.id]!=2);const w=x=>S.k[x.id]==1?0:S.k[x.id]==2?2:1;deck=sh(p).sort((a,b)=>w(a)-w(b));di=0;fl=false}
+function flip(){fl=!fl;render()}
+function mark(v){const c=deck[di];if(!c)return;S.k[c.id]=v;save();di++;fl=false;render()}
+function vCards(){
+ if(!deck.length&&di==0)build();
+ const opt=`<div class="row"><label><input type="checkbox" ${hk?"checked":""} onchange="hk=this.checked;build();render()"> Hide known</label><span>${Math.min(di+1,deck.length)} of ${deck.length}</span><button class="go" style="flex:none;padding:0 14px;min-height:36px;font-size:14px" onclick="build();render()">Reshuffle</button></div>`;
+ if(di>=deck.length)return opt+`<p class="q">${deck.length?"Deck finished. Missed cards come back first on the next pass.":"Nothing here. Untick Hide known or pick another topic."}</p><button class="go" style="width:100%" onclick="build();render()">Start again</button>`;
+ const c=deck[di],st=S.k[c.id]==2?"known":S.k[c.id]==1?"missed last time":"new";
+ return opt+`<div class="fc ${fl?"a":""}" tabindex="0" onclick="flip()"><small>${GN[c.g]}, ${st}. ${fl?"Answer":"Tap to reveal"}</small>${esc(fl?c.a:c.q)}</div><div class="btns"><button class="m" onclick="mark(1)">Missed it</button><button onclick="di++;fl=false;render()">Skip</button><button class="k" onclick="mark(2)">Got it</button></div>`}
+function startQ(){const p=sh(qarr.filter(x=>grp=="all"||x.g==grp)).slice(0,10);qz={i:0,s:0,miss:[],ans:null,q:p.map(c=>({c,o:sh([c.a,...c.w])}))};render()}
+function pick(k){if(qz.ans!=null)return;const t=qz.q[qz.i];qz.ans=k;if(t.o[k]==t.c.a)qz.s++;else qz.miss.push(t.c);render()}
+function nxt(){qz.i++;qz.ans=null;render()}
+function vQuiz(){
+ const n=Math.min(10,qarr.filter(x=>grp=="all"||x.g==grp).length);
+ if(!qz)return `<p class="q">${n} multiple-choice questions from ${grp=="all"?"all topics":GN[grp]}, each with hand-picked answer choices.</p><button class="go" style="width:100%" onclick="startQ()">Start quiz</button>`;
+ if(qz.i>=qz.q.length)return `<p class="cd" style="font-size:56px">${qz.s}/${qz.q.length}</p>`+(qz.miss.length?`<p class="sub">Review these:</p>`+qz.miss.map(c=>`<div class="miss"><b>${esc(c.q)}</b><br>${esc(c.a)}</div>`).join(""):`<p class="sub">Perfect round.</p>`)+`<button class="go" style="width:100%;margin-top:10px" onclick="startQ()">New quiz</button>`;
+ const t=qz.q[qz.i];
+ return `<div class="row"><span>Question ${qz.i+1} of ${qz.q.length}</span><span>${qz.s} correct</span></div><p class="q">${esc(t.c.q)}</p>`+t.o.map((o,k)=>`<button class="o ${qz.ans!=null?(o==t.c.a?"c":k==qz.ans?"w":""):""}" onclick="pick(${k})">${esc(o)}</button>`).join("")+(qz.ans!=null?`<button class="go" style="width:100%" onclick="nxt()">${qz.i+1<qz.q.length?"Next":"See score"}</button>`:"")}
+function tg(i){S.c[i]?delete S.c[i]:S.c[i]=1;save();render()}
+function vGuide(){let n=0;return `<div class="gd">`+Object.entries(GD).map(([h,s])=>{const it=s.split(";"),d=it.filter((_,j)=>S.c[n+j]).length;const r=`<h3>${h} (${d}/${it.length})</h3>`+it.map((t,j)=>{const i=n+j;return `<label><input type="checkbox" ${S.c[i]?"checked":""} onchange="tg(${i})"><span class="${S.c[i]?"d":""}">${t}</span></label>`}).join("");n+=it.length;return r}).join("")+`</div><p class="sub">Tick each item once you can explain it without looking.</p>`}
+function go(t){tab=t;render()}
+function hdr(){const k=cards.filter(c=>S.k[c.id]==2).length;$("#bar").style.width=100*k/cards.length+"%";$("#pl").textContent=k+" of "+cards.length+" cards known"}
+function render(){
+ $("#tabs").innerHTML=[["cards","Flashcards"],["quiz","Quiz"],["guide","Study guide"]].map(([t,l])=>`<button class="${t==tab?"on":""}" onclick="go('${t}')">${l}</button>`).join("");
+ $("#sel").style.display=tab=="guide"?"none":"";
+ $("#v").innerHTML=tab=="cards"?vCards():tab=="quiz"?vQuiz():vGuide();hdr()}
+$("#sel").innerHTML=`<option value="all">All topics (${cards.length} cards)</option>`+Object.keys(GN).map(g=>`<option value="${g}">${GN[g]} (${cards.filter(c=>c.g==g).length})</option>`).join("");
+$("#sel").onchange=e=>{grp=e.target.value;deck=[];di=0;qz=null;render()};
+document.addEventListener("keydown",e=>{if(tab!="cards"||/INPUT|SELECT/.test(e.target.tagName))return;if(e.key==" "){e.preventDefault();flip()}else if(e.key=="1")mark(1);else if(e.key=="2")mark(2)});
+function tick(){const d=new Date(2026,9,2,8,50)-Date.now();if(d<=0){$("#cd").textContent="Exam time";$("#cds").textContent="Good luck.";return}$("#cd").textContent=(d/864e5|0)+"d "+(d/36e5%24|0)+"h "+(d/6e4%60|0)+"m"}
+tick();setInterval(tick,3e4);render();
+</script></body></html>
